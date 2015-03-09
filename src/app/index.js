@@ -1,5 +1,6 @@
 'use strict';
 
+//Tinka is leuk
 angular.module('angularDemo', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngResource', 'ui.router', 'ui.bootstrap'])
   
   .config(function ($stateProvider, $urlRouterProvider) {
