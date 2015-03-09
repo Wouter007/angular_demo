@@ -9,7 +9,6 @@ angular
   }
 });
 
-//Andere manier om controller aan te halen, minder indentation
 function MainCtrl ($scope, shared) {
   var main = this;
 
