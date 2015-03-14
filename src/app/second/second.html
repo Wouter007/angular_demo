@@ -15,10 +15,24 @@
   </div>
 
   <hr>
-  <input type="text" ng-model="search"> <br><br>
+  <h3>search - custom filter</h3>
+  <input type="text" ng-model="search" placeholder="Search for"> <br><br>
 
   <table>
     <tr ng-repeat="actor in ave.cast | filter: search">
+      <td>{{actor.name}}</td>
+      <td>{{actor.character}}</td>
+    </tr>
+  </table>
+
+  <h3>orderBy name or character</h3>
+  <form>
+    <input type="radio" name="order" value="name" ng-model="order"> Order by Name
+    <input type="radio" name="order" value="character" ng-model="order"> Order by character
+  </form> <br>
+
+  <table>
+    <tr ng-repeat="actor in ave.cast | orderBy:order">
       <td>{{actor.name}}</td>
       <td>{{actor.character}}</td>
     </tr>

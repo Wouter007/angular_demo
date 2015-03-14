@@ -8,5 +8,6 @@ angular.module('angularDemo')
     second.greeting = "second"; 
     second.shared = shared;
     $scope.ave = ave;
+    $scope.order = 'name';
   })
 ;

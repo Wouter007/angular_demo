@@ -3,7 +3,7 @@
   <div ng-include="'components/navbar/navbar.html'"></div>
 
   <div class="jumbotron text-center">
-    <h1>{{ main.greeting }}</h1>
+    <h1 enter="uglify" leave>{{ main.greeting }}</h1>
     <p class="lead">
       {{main.shared.message}} <br>
       {{main.shared.message|reverse}}
@@ -15,7 +15,9 @@
     <input type="text" class="center-block" ng-model="main.shared.message">
   </div>
   <br><br><br>
+
   <compose-email></compose-email>
+
   <br><br><br>
   <hr>
 

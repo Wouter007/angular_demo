@@ -20,7 +20,7 @@ function composeEmail () {
 
     },
     link: function ($scope, $element, $attrs) {
-
+      console.log('It works!');
     },
     template: [
       '<div class="compose-email">',
@@ -32,11 +32,31 @@ function composeEmail () {
   };
 }
 
+function enterElement () {
+  // ipv een object zoals bij composeEmail, wordt hier
+  // enkel link meteen doorgegeven als een functie
+  // dit geeft dus een function terug ipv een object
+  return function (scope, element, attrs) {
+    element.bind("mouseenter", function() {
+      element.addClass(attrs.enter);
+    })
+  }
+}
+function leaveElement () {
+  return function (scope, element, attrs) {
+    element.bind("mouseleave", function() {
+      element.removeClass(attrs.enter);
+    })
+  }
+}
+
 angular
   .module('angularDemo')
 
   //driective: wordt automatisch omgezet naar compose-email
   .directive('composeEmail', composeEmail)
+  .directive('enter', enterElement)
+  .directive('leave', leaveElement)
 
   .controller('MainCtrl', MainCtrl)
   .controller('composeEmail', composeEmail)
